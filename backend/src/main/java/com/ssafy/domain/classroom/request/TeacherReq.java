@@ -1,16 +1,3 @@
-package com.ssafy.domain.classroom.request;
-
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import jakarta.persistence.Column;
-import lombok.Getter;
-import lombok.ToString;
-
-@Getter
-@ToString
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-public class TeacherReq {
-    String teacherName;
-    String teacherEmail;
-    String teacherPassword;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:810a1f9c59d157c8ecb6d180e07c4ff97484436a8cced1bf2e62d3b08721371a
+size 539
