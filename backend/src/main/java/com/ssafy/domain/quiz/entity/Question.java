@@ -1,17 +1,3 @@
-package com.ssafy.domain.quiz.entity;
-
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "question")
-public class Question {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "question_id")
-    Long questionId;
-
-    @ManyToOne
-    @JoinColumn(name = "workbook_id")
-    Workbook workbook;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:fe746bd028ad8551ace16ff8251b3ca43c0de792be13f2e839c5f63d20e5f381
+size 800
