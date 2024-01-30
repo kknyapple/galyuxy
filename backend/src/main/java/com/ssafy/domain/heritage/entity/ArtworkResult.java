@@ -1,21 +1,3 @@
-package com.ssafy.domain.heritage.entity;
-
-import jakarta.persistence.*;
-
-import java.sql.Timestamp;
-
-@Entity
-@Table(name = "artwork_result")
-public class ArtworkResult {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "artwork_result_id")
-    int artworkResultId;
-
-    @Column(name = "artwork_result_create_time")
-    Timestamp artworkResultCreateTime;
-
-    @Column(name = "artwork_result_image_url")
-    String artworkResultImageUrl;
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:5838f098c1f874707e7b613757102c660d79cb10eac9917faa1ae41cfb88abef
+size 727
