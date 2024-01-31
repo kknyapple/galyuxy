@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bfdb8ef04e05b945cbc7ef61b0bbbc37002ab045be46e1ab39db3673a82ab809
-size 537
+package com.ssafy.domain.heritage.repository;
+
+import com.ssafy.domain.heritage.entity.ArtworkResult;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface ArtworkResultRepository extends JpaRepository<ArtworkResult, Integer> {
+    List<ArtworkResult> findByStudentGroupGroupId(int studentId);
+    List<ArtworkResult> findByStudentId(int studentId);
+
+
+}
