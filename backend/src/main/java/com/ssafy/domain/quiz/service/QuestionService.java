@@ -1,15 +1,3 @@
-package com.ssafy.domain.quiz.service;
-
-import com.ssafy.domain.quiz.entity.Question;
-import com.ssafy.domain.quiz.request.QuestionReq;
-
-import java.util.List;
-import java.util.Optional;
-
-public interface QuestionService {
-    Question saveOne(QuestionReq questionReq);
-    Optional<Question> findOne(Integer id);
-    List<Question> findAll();
-    List<Question> findAllByKeyword(String keyword);
-    List<Question> findAllByWorkbookId(Integer workbookId);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2a8286de1afccdcb814f2de2dd09b360c35cab17b20b37d1ff3d48fae9985fbc
+size 552
