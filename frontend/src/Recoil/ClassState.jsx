@@ -1,26 +1,3 @@
-import { atom } from 'recoil'
-
-export const classListState = atom({
-  key: 'classList',
-  default: [],
-})
-
-export const studentListState = atom({
-  key: 'studentList',
-  default: [],
-})
-
-export const isAddModalOpenState = atom({
-  key: 'isAddModalOpen',
-  default: false,
-})
-
-export const isRefactorModalOpenState = atom({
-  key: 'isRefactorModalOpen',
-  default: false,
-})
-
-export const userTypeState = atom({
-  key: 'userType',
-  default: 1, // 1: teacher, 2: student
-})
+version https://git-lfs.github.com/spec/v1
+oid sha256:87907e69f0bd66f5fb4a80ad2ae314e43b9dac84e470ed6b0da20d88f9bc0e6a
+size 637
