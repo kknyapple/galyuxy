@@ -1,15 +1,3 @@
-package com.ssafy.domain.classroom.service;
-
-import java.util.List;
-import java.util.Optional;
-
-import com.ssafy.domain.classroom.entity.Teacher;
-import com.ssafy.domain.classroom.request.TeacherReq;
-
-public interface TeacherService {
-    Teacher postOne(TeacherReq teacherReq);
-    List<Teacher> getAll();
-    Optional<Teacher> getOne(Integer id);
-    Teacher updateOne(TeacherReq teacherReq, Integer id);
-    void deleteOne(Integer id);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:fab800712d1077924b14ab073c9bfe48d906d8e91dd2cbe95d795347c34f42c9
+size 1158
