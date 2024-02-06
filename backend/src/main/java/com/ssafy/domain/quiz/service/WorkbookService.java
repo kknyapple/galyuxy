@@ -1,15 +1,3 @@
-package com.ssafy.domain.quiz.service;
-
-import com.ssafy.domain.quiz.entity.Workbook;
-import com.ssafy.domain.quiz.request.WorkbookReq;
-
-import java.util.List;
-
-public interface WorkbookService {
-    Workbook postOne(WorkbookReq workbookReq);
-    void deleteOne(Integer id);
-    List<Workbook> getAll();
-    List<Workbook> getAllByTeacherId(Integer id);
-    List<Workbook> getAllByKeyword(String keyword);
-    List<Workbook> getAllByTeacherName(String teacherName);
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:5b1f64f7b6f3024a417915908b99ffa7cac7218745f3af31a32178e387fa5451
+size 546
