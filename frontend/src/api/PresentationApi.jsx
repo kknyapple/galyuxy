@@ -1,17 +1,3 @@
-import axios from 'axios';
-
-const baseURL = 'http://localhost:8080';
-
-const api = axios.create({
-  baseURL,
-});
-
-export const getPresentationList = async (groupId) => {
-  try {
-    const response = await api.get(`/presentation/${groupId}`);
-    return response.data;
-  } catch (error) {
-    console.error('Error:', error);
-    throw error;
-  }
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:c9d045bf7bae6f0168ab51475385db3809c60f677425de7b549b41c960813d6f
+size 639
