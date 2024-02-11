@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ff85bd446b4294a48248daa4053587d0a003f32fe58a0e0a25e9ae9d54bbdf25
-size 525
+import { atom } from 'recoil';
+
+export const userTypeState = atom({
+  key: 'userType',
+  default: 1, // 1: teacher, 2: student
+});
+
+export const teacherDataState = atom({
+  key: 'teacherData',
+  default: {
+    id: 1,
+    name: null,
+    email: null,
+    password: null,
+    role: 'TEACHER',
+    groupId: null,
+    presentationId: null,
+    roomId: null,
+  },
+});
+
+export const studentUserState = atom({
+  key: 'studentUser',
+  default: {
+    groupId: 1,
+    id: 5,
+    name: '박학생',
+    no: 2,
+  },
+});
