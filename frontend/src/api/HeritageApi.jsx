@@ -1,19 +1,3 @@
-import axios from 'axios';
-export async function getHeritage() {
-  try {
-    const response = await axios.get('http://i10c206.p.ssafy.io:8080/heritage');
-    return response;
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-export const getHeritageList = async (presentationId) => {
-  try {
-    const response = await axios.get(`http://i10c206.p.ssafy.io:8080/heritage`);
-    return response.data;
-  } catch (error) {
-    console.error('Error getHeritageList: ', error);
-    throw error;
-  }
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:1a88339d850565b8941ac96c56845f00cb394e8a0e0e0595a8c692b5a9fba40f
+size 655
