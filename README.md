@@ -1,2 +1,3 @@
-## SSAFY 10기 광주 2반 6팀 좋을42 공통프로젝트
-## 갤역시(Galyuxy)
+version https://git-lfs.github.com/spec/v1
+oid sha256:6cfb09140b16fe9a0f1eb1e2880054b7c5dbad12a32f78d92b199a985581bed4
+size 2858
