@@ -1,3 +1,113 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:31aec75da7d9c064dd01dfc26bd901002e48aef05aa51fc7e38758ca0a96a968
-size 1754
+#header {
+  color: #ffffff;
+  height: 40px;
+  padding: 0 14px 0 0;
+  position: absolute;
+  top: 76rem;
+  width: 73rem;
+  left: 15rem;
+  z-index: 999999;
+  min-width: 400px !important;
+  border-radius: 2.5rem;
+  border: 1px solid #000;
+
+  background: rgba(255, 255, 255, 0.5);
+}
+.toolbar {
+  padding: 0 !important;
+}
+
+.headerLight {
+  color: #706969 !important;
+  background-color: #eeeeee !important;
+}
+
+#navSessionInfo {
+  position: absolute;
+}
+
+#navButtons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  min-width: 400px;
+}
+#navChatButton {
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+
+#titleContent {
+  max-width: 100px;
+  background-color: #494949;
+  margin: 5px -18px;
+  padding: 0px 15px;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: right;
+  margin-top: 20px;
+}
+
+.titleContentLight {
+  background-color: #dfdfdf !important;
+  color: #000;
+}
+
+#header_img {
+  max-width: 135px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+#session-title {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#point {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 12px;
+  right: 33px;
+  border-radius: 50%;
+  background-color: #ffa600;
+  border: 1px solid #000;
+  z-index: 99999;
+}
+.pointLight {
+  border: 1px solid #ffffff !important;
+}
+
+@media only screen and (max-width: 700px) {
+  #titleContent,
+  #navChatButton {
+    display: none;
+  }
+}
+
+/* 비디오 부분 */
+.videoradiusBox {
+  width: 16.8125rem;
+  height: 6.4375rem;
+  border-radius: 3.21875rem;
+  background: #2cc143;
+  position: relative;
+  top: -2rem;
+  right: 14rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exitBox {
+  position: relative;
+  bottom: 1.75rem;
+  left: 16.5rem;
+}
+
+.micBox {
+  position: relative;
+  right: 10rem;
+}

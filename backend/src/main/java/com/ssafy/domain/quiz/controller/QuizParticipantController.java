@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f04c1c8b3e462a667b566db927676bd02ce98f31c0a9386ea7ec110d986013b
-size 612
+package com.ssafy.domain.quiz.controller;
+
+import com.ssafy.domain.quiz.request.QuizParticipant;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class QuizParticipantController {
+
+    @MessageMapping("/quiz/student/participant")
+    @SendTo("/quiz/teacher/participation")
+    public QuizParticipant notify(QuizParticipant quizParticipant) throws Exception {
+        System.out.println(quizParticipant.toString());
+        return quizParticipant;
+    }
+}

@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5aa4d130c8e3e4eb7bfde9a887c56fdd287f02e3ce9f47a97232ec4983167f93
-size 739
+package com.ssafy.domain.classroom.dto;
+
+import com.ssafy.domain.classroom.entity.enums.Role;
+import com.ssafy.global.component.jwt.dto.TokenTeacherInfoDto;
+import lombok.*;
+
+@Getter
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
+public class TeacherLoginActiveDto {
+    private int id;
+    private String name;
+    private String email;
+    private Role role;
+    private boolean isDeleted;
+
+
+    public static TeacherLoginActiveDto from(TokenTeacherInfoDto info) {
+        return TeacherLoginActiveDto.builder()
+                .id(info.getId())
+                .email(info.getEmail())
+                .role(Role.valueOf(info.getRole()))
+                .build();
+    }
+}

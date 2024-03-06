@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bda76c9bb46bec62f0a3b9241a5d00792f7fc1920a66deed416d84f3736d715c
-size 620
+package com.ssafy.domain.presentation.entity;
+
+import jakarta.persistence.*;
+
+import java.sql.Timestamp;
+
+public class PresentationResult {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "presentation_result_id")
+    Integer presentationResultId;
+
+    @Column(name = "presentation_result_url")
+    String presentationResultUrl;
+
+    @Column(name = "presentation_result_create_date")
+    Timestamp presentationResultCreateDate;
+
+    @ManyToOne
+    @JoinColumn(name = "presentation_id")
+    Presentation presentation;
+
+    @ManyToOne
+    @JoinColumn(name = "room_id")
+    Room room;
+}

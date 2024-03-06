@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:32cf976c6988547d95c36ae128a78a5eff70ded2a3d072a935940b53a2c1071b
-size 552
+package com.ssafy.domain.classroom.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestControllerAdvice
+public class ClassroomExceptionHandler {
+
+    @ResponseBody
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(ClassroomException.class)
+    ResponseEntity<String> notFoundHandler(ClassroomException classroomException) {
+        return new ResponseEntity<String>(classroomException.getMessage(), HttpStatus.NOT_FOUND);
+    }
+}

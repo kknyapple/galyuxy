@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8d54181623f75c7d52dc2854c24b207bfd0740648016b25958556c8fa7440797
-size 626
+package com.ssafy.global.component.jwt;
+
+import java.security.Key;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+
+@Component
+@RequiredArgsConstructor
+public class JwtIssuer {
+    // 토큰 생성해주는 메서드
+    public String issueToken(@NonNull Claims claims, @NonNull Key secretKey) {
+        return Jwts.builder()
+                .setClaims(claims)
+                .signWith(secretKey, SignatureAlgorithm.HS512)
+                .compact();
+    }
+}

@@ -1,3 +1,50 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1bce6f79d0839b873cb57d436ecc234df9c72d68a5eb0e8126a4d8baf2c5b9d4
-size 1432
+package com.ssafy.domain.heritage.entity;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.ssafy.domain.classroom.entity.Student;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.sql.Timestamp;
+
+@Entity
+@Table(name = "artwork_result")
+@Getter(AccessLevel.PUBLIC)
+@Setter
+@ToString
+@NoArgsConstructor
+public class ArtworkResult {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "artwork_result_id")
+    int artworkResultId;
+
+    @Column(name = "artwork_result_create_time")
+    Timestamp artworkResultCreateTime;
+
+    @Column(name = "artwork_result_image_url")
+    String artworkResultImageUrl;
+
+    @ManyToOne
+    @JoinColumn(name = "artwork_id", nullable = false)
+    @JsonManagedReference
+    private Artwork artwork;
+
+    @ManyToOne
+    @JoinColumn(name = "student_id")
+    @JsonManagedReference
+    private Student student;
+
+    public ArtworkResult(int studentId, String artworkResultImageUrl) {
+        this.student = new Student();
+        this.student.setId(studentId);
+        this.artworkResultImageUrl = artworkResultImageUrl;
+    }
+    public ArtworkResult(int studentId, Timestamp artworkResultCreateTime, String artworkResultImageUrl) {
+        this.student = new Student();
+        this.student.setId(studentId);
+        this.artworkResultCreateTime = artworkResultCreateTime;
+        this.artworkResultImageUrl = artworkResultImageUrl;
+    }
+}

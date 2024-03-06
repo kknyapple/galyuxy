@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b90bbe93270ef521926afaccbd6cfa6468cac966ee39c0cd70d0388a7d62ed7b
-size 827
+//package com.ssafy.domain.quiz.service;
+//
+//import com.ssafy.domain.quiz.dto.ActiveWorkbookDTO;
+//import com.ssafy.domain.quiz.dto.ActiveWorkbookProjection;
+//
+//import java.util.List;
+//
+//public interface ActiveWorkbookService {
+//    List<ActiveWorkbookProjection> findActiveWorkbookByGroupId(Integer groupId);
+//    ActiveWorkbookDTO putOne(ActiveWorkbookDTO activeWorkbookDTO);
+//}
+
+package com.ssafy.domain.quiz.service;
+
+import com.ssafy.domain.quiz.dto.ActiveWorkbookDTO;
+import com.ssafy.domain.quiz.entity.ActiveWorkbook;
+import com.ssafy.domain.quiz.entity.Workbook;
+
+import java.util.Optional;
+
+public interface ActiveWorkbookService {
+
+    Optional<Workbook> getWorkbookByGroupId(Integer groupId);
+
+    void updateActiveWorkbook(ActiveWorkbookDTO request);
+    ActiveWorkbook getActiveByGroupId(int groupId);
+
+}

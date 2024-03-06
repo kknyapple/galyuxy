@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:be81a037c23d665d69509ec7a0b8c40761b2ad20b96535edf65e919c5d7f5264
-size 701
+package com.ssafy.domain.quiz.response;
+
+import com.ssafy.domain.quiz.entity.QuizResult;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class QuizResultRes {
+
+    Integer workbookId;
+    Integer groupId;
+    Integer studentId;
+    int quizResultScore;
+
+    public static QuizResultRes of(QuizResult quizResult) {
+        QuizResultRes quizResultRes = new QuizResultRes();
+        quizResultRes.setWorkbookId(quizResult.getWorkbook().getId());
+        quizResultRes.setGroupId(quizResult.getGroup().getId());
+        quizResultRes.setStudentId(quizResult.getStudent().getId());
+        quizResultRes.setQuizResultScore(quizResult.getScore());
+        return quizResultRes;
+    }
+}

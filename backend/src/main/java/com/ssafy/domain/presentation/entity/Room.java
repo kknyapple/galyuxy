@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1dd7d5d90af43dd541c15b2b5f39d306293073a72e3433c2bce9138e389c23b6
-size 692
+package com.ssafy.domain.presentation.entity;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "room")
+@Getter(AccessLevel.PUBLIC)
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Room {
+
+    @Id
+    @Column(name = "room_id", length = 50, nullable = false)
+    private String roomId;
+
+    @Column(name = "room_subject")
+    private String roomSubject;
+
+    @Column(name = "room_script")
+    private String roomScript;
+
+    @Column(name = "room_is_deleted")
+    private boolean roomIsDeleted;
+
+    @ManyToOne
+    @JoinColumn(name = "presentation_id")
+    private Presentation presentation;
+}

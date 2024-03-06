@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c2e4e1cfa57aa712a3ab4e9f0b0a962c988edc8e1767f220b4db3d2bf67b0771
-size 894
+package com.ssafy.domain.heritage.Dto;
+import com.ssafy.domain.heritage.entity.Artwork;
+
+import java.util.List;
+import java.util.stream.Collectors;
+public class ArtworkMapper {
+    public static ArtworkDto toDto(Artwork aw){
+        ArtworkDto dto = new ArtworkDto();
+        dto.setId(aw.getArtworkId());
+        dto.setType(aw.getArtworkType());
+        dto.setImageUrl(aw.getArtworkImageUrl());
+
+        dto.setEraId(aw.getEra().getEraId());
+        dto.setEraName(aw.getEra().getEraName());
+        dto.setEraCountry(aw.getEra().getEraCountry());
+
+        dto.setHeritageId(aw.getHeritage().getHeritageId());
+        dto.setHeritageName(aw.getHeritage().getHeritageName());
+        return dto;
+    }
+
+    public static List<ArtworkDto> toDtoList(List<Artwork> artworkList){
+        return artworkList.stream().map(ArtworkMapper::toDto)
+                .collect(Collectors.toList());
+    }
+}

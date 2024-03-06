@@ -1,3 +1,47 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:516a49c6183f16e140f4537654cdad4ebc91be7f8500ee64664ed5bc98e78dfa
-size 1141
+package com.ssafy.domain.presentation.entity;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
+
+import java.sql.Timestamp;
+
+import com.ssafy.domain.classroom.entity.Group;
+import lombok.*;
+
+@Entity
+@Table(name = "presentation")
+@Getter(AccessLevel.PUBLIC)
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Presentation {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "presentation_id")
+    private Integer presentationId;
+
+    @Column(name = "presentation_title", unique = true)
+    private String presentationTitle;
+
+    @Column(name = "presentation_create_date")
+    private Timestamp presentationCreateDate;
+
+    @Column(name = "presentation_is_active")
+    private boolean presentationIsActive;
+
+    @Column(name = "presentation_is_deleted")
+    private boolean presentationIsDeleted;
+
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    @JsonBackReference
+    private Group group;
+
+    public Presentation(String presentationTitle, Group group) {
+        this.presentationTitle = presentationTitle;
+        this.group = group;
+    }
+
+}

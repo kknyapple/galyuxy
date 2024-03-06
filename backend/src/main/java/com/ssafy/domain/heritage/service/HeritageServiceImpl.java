@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:326db913123fe092efe419b0c29406fe84da61ac477575feed8921818447c18d
-size 736
+package com.ssafy.domain.heritage.service;
+
+import com.ssafy.domain.heritage.entity.Heritage;
+import com.ssafy.domain.heritage.repository.HeritageRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+@RequiredArgsConstructor
+public class HeritageServiceImpl implements HeritageService{
+
+    @Autowired
+    private final HeritageRepository heritageRepository;
+
+    @Override
+    public List<Heritage> getAll() {
+        return heritageRepository.findAll();
+    }
+
+
+    public Optional<Heritage> getById(int id) {
+        return heritageRepository.findById(id);
+    }
+}

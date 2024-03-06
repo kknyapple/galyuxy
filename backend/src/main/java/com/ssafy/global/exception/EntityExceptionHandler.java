@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a961644eecb8c8efcad1f1100f8cbf3072ea5085635095e754ec77abbe06beef
-size 731
+package com.ssafy.global.exception;
+
+import com.ssafy.global.common.dto.Message;
+import jakarta.persistence.EntityNotFoundException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class EntityExceptionHandler {
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<Message> handleEntityNotFoundException(EntityNotFoundException entityNotFoundException) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Message.fail("BAD_REQUEST", entityNotFoundException.getMessage()));
+    }
+}

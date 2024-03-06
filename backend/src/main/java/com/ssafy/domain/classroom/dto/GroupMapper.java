@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0bc2a3d292774249be761c492f1a16ee11d5e69c254cebf1b8ce0945edd6d55d
-size 585
+package com.ssafy.domain.classroom.dto;
+
+import com.ssafy.domain.classroom.entity.Group;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class GroupMapper {
+    public static GroupDto toDto(Group group){
+        GroupDto dto = new GroupDto();
+        dto.setId(group.getId());
+        dto.setName(group.getName());
+        dto.setDeleted(group.isDeleted());
+        return dto;
+    }
+
+    public static List<GroupDto> toDtoList(List<Group> groupList){
+        return groupList.stream().map(GroupMapper::toDto)
+                .collect(Collectors.toList());
+    }
+}

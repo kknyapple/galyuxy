@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:442530629adcc5cb6af875653f3184061c50d8637971650b664e245a61dddfd6
-size 573
+import Arrow from 'assets/svg/arrow'
+import styled from 'styled-components'
+
+const BtnWrapper = styled.button`
+  position: absolute;
+  width: 12.5rem; // Adjust if necessary
+  height: 4rem; // Adjust if necessary
+  border-radius: 3.75rem;
+  background: #d9d9d9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  gap: 0.5rem;
+  top: 90.38%;
+  right: 4%;
+`
+
+const Btn = () => {
+  return (
+    <BtnWrapper>
+      <Arrow />
+      <span>뒤로가기</span>
+    </BtnWrapper>
+  )
+}
+export default Btn
